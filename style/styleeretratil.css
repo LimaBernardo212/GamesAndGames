@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --cor01: #373f47;
+    --cor02: #666D73;
+    --cor03: #9FA3A6;
+    --cor04: #D7D8D9;
+    --cor05: #F2F2F2;
+    --cor06: #1c202475;
+    --cor07: black;
+    --cor08: #252f38;
+    --fontNormal: 'Roboto';
+    --fontTitle: 'Roboto Mono';
+    --fontH1: 'Roboto Condensed';
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html{
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--cor01);
+}
+header{
+    top: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--cor01);
+}
+header > img{
+    height: 80px;
+    width: 180px;
+    margin-left: 15px;
+}
+header nav > a{
+    padding: 30px;
+    color: var(--cor05);
+    font-family: var(--fontNormal);
+    text-decoration: none;
+    font-weight: 550;
+}
+header nav > a:hover{
+    font-weight: 560;
+    text-decoration: underline;
+}
+header > nav{
+    background-color: var(--cor01);
+}
+a#burguinho{
+    display: none;
+}
+a#burguinho > img{
+    width: 45%;
+}
+.login{
+    margin-top: 15vh;
+    margin-left: 20vw;
+    margin-bottom: 5vh;
+    padding: 55px 55px
+    55px 55px;
+    background-color: var(--cor05);
+    width: 50vw;
+    height: 75vh;
+    animation-name: slideLogin;
+    animation-duration: 3.5s;
+}
+.title::before{
+    content: '—';
+    color: var(--cor05);
+    font-weight: lighter;
+    letter-spacing: 20px;
+}
+.title{
+    color: var(--cor05);
+    margin-left: 10vw;
+    font-size: 2.7em;
+    font-family: var(--fontNormal);
+    line-height:1.5;
+    margin-top: 30px;
+    font-weight: bold;
+    max-width: 60vw;
+}
+h2{
+    color: var(--cor04);
+    font-size: 1em;
+    font-family: var(--fontTitle);
+    margin-left: 8vw;
+}
+p{
+    color: var(--cor04);
+    font-size: 1.2em;
+    font-family: var(--fontNormal);
+    max-width: 600px;
+    font-weight: bold;
+    text-align: justify;
+    margin: 2vh 10vw;
+}
+h3{
+    color: var(--cor01);
+    font-size: 2.5em;
+    font-family: var(--fontTitle);
+    margin-left: 5vw;
+}
+label{
+    display: block;
+    font-family: var(--fontTitle);
+    color: var(--cor06);
+    font-weight: bold;
+    margin-left: -15px;
+}
+.login div{
+    margin-left: 7.5vw;
+}
+input{
+    width: 35vw;
+    height: 40px;
+    border-radius: 15px;
+    margin: 15px -15px;
+    padding: 5px;
+    border: 1px solid var(--cor04);
+}
+#submit{
+    background-color: var(--cor01);
+    color: var(--cor05);
+    font-weight: bold;
+    height:50px;
+    width: 36vw ;
+    border-color: var(--cor05);
+}
+#dooble {
+    display: inline-flex;
+    
+}
+#dooble input{
+    width: 13vw;
+    margin-top: 2vw;
+    margin-right: 9vw;
+    margin-left: -5vw;
+}
+#conosco{
+    border: 3px  solid rgba(255, 255, 255, 0.795);
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.795);
+}
+#conosco:hover{
+    text-decoration: none;
+    border: 3px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+}
+.acountconditionals{
+    text-decoration: none;
+    color: var(--cor05);
+    font-weight: bold;
+}
+.acountconditionals:hover{
+    text-decoration: underline;
+    color: var(--cor04);
+}
+.CBUM{
+    padding: 15px;
+    padding-left: 275px;
+    padding-right: 275px;
+    border-radius: 25px;
+    background-color: var(--cor05);
+    margin-left: 10vw;
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+    font-family: var(--fontNormal);
+}
+.CBUM:hover{
+    text-decoration: underline;
+    color: var(--cor02);
+    background-color: var(--cor04);
+}
+#submite{
+    background-color: var(--cor01);
+    color: var(--cor05);
+    font-weight: bold;
+    height:50px;
+    width:52vw;
+    border-color: var(--cor05);
+}
+.key{
+    display: none;
+}

@@ -1,0 +1,457 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root{
+    --cor01: #373f47;
+    --cor02: #666D73;
+    --cor03: #9FA3A6;
+    --cor04: #D7D8D9;
+    --cor05: #F2F2F2;
+    --cor06: #1c202475;
+    --cor07: black;
+    --cor08: #252f38;
+    --cor09: #424e5a;
+    --fontNormal: 'Roboto';
+    --fontTitle: 'Roboto Mono';
+    --fontH1: 'Roboto Condensed';
+}
+html{
+    overflow-x: hidden;
+}
+
+nav{
+    display: none;
+}
+a#burguinho{
+    display: block;
+    margin-right: 20px;
+}
+a#burguinho > img{
+    width: 45%;
+}
+header{
+    width: 91vw;
+    background-image: linear-gradient( to right, var(--cor01), var(--cor01),var(--cor01), var(--cor01));
+}
+section#presentation{
+    width: 99vw;
+    background-image: linear-gradient( to right, var(--cor01), var(--cor01),var(--cor01), var(--cor01));
+}
+section#presentation > img{
+    width: 60vw;
+    height: 30vw;
+    margin-top: 7vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+section#presentation > h1{
+    font-size: 2em;
+    padding: 0px 15px 0px 20px;
+    margin-top: -25vh;
+    margin-left: 7vw;
+    font-size: 1.95em;
+    max-width: 500px;
+    
+}
+#player{
+    margin-left: -1vw;
+    margin-top: 5vh;
+}
+.diver{
+    display: block;
+    width: 50.6vw;
+    margin-top: 20px;
+    margin: auto;
+}
+.diver > img{
+    display: block;
+    width:  120px;
+    height: 120px;
+    margin: 0px 20px  20px 0px;
+}
+.diver  p{
+    display: block;
+    width: 60vw;
+    margin-left: -25px;
+}
+#diveren{
+    margin: auto;
+}
+#divere{
+    margin: auto; 
+}
+#pararsett{
+    transform: translate(6vw, -2.5vh);
+}
+.p{
+    display: block;
+    padding: 20px;
+    margin: 10vw 5vw 10vw 10vw;
+    transform: translateX(6vw);
+    font-family: var(--fontNormal);
+    font-size: 1.05em;
+    width: 100vw;
+    text-align: justify;
+}
+#imagesett{
+    display: block;
+    border-radius: 5%;
+    transform: translate(2.5vw, -2.5vh);
+    width: 300px;
+}
+article p{
+    width: 50vw;
+}
+article img{
+    width: 50px;
+    height: 55px;
+}
+.trans h1{
+    font-size: 2em;
+    width: 85vw;
+}
+.trans p{
+    max-width: 80vw;
+    margin-left: 3.33vw;
+}
+.trans img{
+    margin-top: 25vh;
+    width: 80vw;
+    height: 80vw;
+    
+}
+.process{
+    display: block;
+    width: 90vw;
+    margin: auto;
+    border-bottom: 5px solid #373f47;
+    border-right: 0px solid #373f47;
+    padding: 40px -2px;
+}
+#entrega{
+    border-right: 0px solid #373f47;
+}
+.title{
+    font-size: 2.40em;
+}
+h2{
+    font-size: 0.8em;
+}
+.process p{
+    width: 70vw;
+    margin: auto;
+}
+.process img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+a{
+    margin-right: 15vw;
+}
+.process h2{
+    font-size: 0.8em;
+}
+#img{
+    
+    width: 55vw;
+    height: 45vh;
+    margin-bottom: 5vh;
+    margin-left:20vw;
+    border-radius: 0px;
+}
+#imggg{
+    position: relative;
+    top: -250px;
+    width: 55vw;
+    height: 45vh;
+    margin-top: -15vh;
+    border-radius: 0px;
+    margin-bottom: -25vh;
+    margin-left: 20vw;
+}
+#transit{
+    display: inline-flex;
+    height: 30vh;
+    padding: 20px 0px 0px 0px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    animation-name: slideer;
+    animation-duration: 3.5s;
+    border-left: none;
+    border-bottom: 5px solid #D7D8D9;
+}
+#transit p{
+    margin-left: 25px;
+    max-width: 250px;
+    text-align: justify;
+}
+#imgg{
+    display: none;
+    width: 75vw;
+    height: 85vh;
+    margin-left: 10vw;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
+div{
+    margin-left: -3.33vw;
+    width: 100vw;
+}
+
+.trans{
+    display: inline-flex;
+    height: 50vh;
+    padding: 10px;
+    width: 100vw;
+    flex-wrap: nowrap;
+    align-items: center;
+    animation-name: slide;
+    animation-duration: 3.5s;
+    border-radius: none;
+    flex-wrap: wrap;
+    margin-bottom: 55vw;
+
+}
+#transit .title{
+    margin-left: 15px;
+    font-size: 1.25em;
+}
+#imgBlack{
+    display: none;
+}
+#button{
+    margin-bottom: 30px;
+    width: 80vw;
+    margin-left: 2vw;
+}
+.title::before{
+    content: '—';
+    color: var(--cor05);
+    font-weight: lighter;
+    letter-spacing: 10px;
+}
+.title{
+    margin-left: 17.5px;
+}
+#glass{
+    margin-left: 25px;
+}
+.port{
+    padding-top: 600px;
+    
+}
+#portifolio{
+    padding-left: -100px;
+}
+#center{
+    margin-left: 25vw;
+}
+.Sp img{
+    width: 100px;
+    height: 100px;
+}
+#Inscrever{
+    width: 90vw;
+}
+.CBUM{
+    padding: 15px 27.5vw;
+    max-width: 90vw;
+    border-radius: 25px;
+    margin-left: 9vw;
+    background-color: var(--cor05);
+    text-decoration: none;
+    color: var(--cor01);
+    font-weight: bold;
+    font-family: var(--fontNormal);
+}
+.CBUM:hover{
+    text-decoration: underline;
+    color: var(--cor02);
+    background-color: var(--cor04);
+}
+#diver{
+    padding-top: 125px;
+    padding-left: 25px;
+}
+.img4{
+    display: none;
+}
+.img{
+   display: none;
+}
+#transer{
+    display: inline-flex;
+    height: 90vh;
+    padding: 200px 10px 10px 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    animation-name: slide;
+    animation-duration: 3.5s;
+    border-left: none;
+    flex-wrap: wrap;
+}
+.login{
+    display: block;
+    margin-top: 70px;
+    margin-left: -15px;
+    width: 90vw;
+    padding: 55px 15px 50px 75px;
+    height: 50vh;
+}
+.login input{
+    width: 70vw;
+    border: 1px solid var(--cor01);
+}
+#vid{
+    margin-top: 100px;
+    margin-left: -1vw;
+    width: 89vw;
+}
+#Conta{
+    margin-left: 3vw;
+}
+.transt{
+    display: block;
+    border-left: 5px solid var(--cor01);
+    height: 70vh;
+}
+.eye{
+    left: 29vw;
+}
+
+#buttton{
+    margin-left: 25px;
+    width: 300px;
+}
+#transiterser img, #transiter img, #bronze img, #prata img, #gold img, #platine img, #diamond img{
+    width: 0px;
+    height: 0px;
+}
+#transiterser p, #transiter p, #bronze p, #prata p, #gold p, #platine p, #diamond p{
+    width: 75vw;
+}
+#transiterser h1, #transiter h1, #bronze h1, #prata h1, #gold h1, #platine h1, #diamond h1{
+    margin-left: 0px;
+}
+.prox{
+    margin-left: 30px;
+    width: 300px;
+}
+.proxi{
+    margin-left: 5vw;
+    width: 85vw;
+}
+div p{
+    margin-left: 10vw;
+}
+.CHUTED{
+   
+    width: 100vw;
+    margin-left: 7vw;
+    padding: 15px 35vw;
+}
+.DOKWON{
+   
+    width: 100vw;
+    padding: 15px 100px;
+}
+#sections{
+    display: flex;
+    height: 50vh;
+}
+.project{
+    display: none;
+}
+.CHUTEDOKWON{
+    margin-left: 9vw;
+    padding: 15px 29vw;
+}
+#submit{
+    width: 74vw;
+    border-color: var(--cor01);
+}
+footer{
+    display: none;
+}
+#voltar{
+    padding:15px 140px;
+}
+#transiter{
+   padding: 0px;
+}
+#transiter h1{
+    width: 90vw;
+    margin-left: 5vw;
+}
+.CHUTONe{
+    display: block;
+    margin-left: -1vw;
+    width: 73vw;
+    margin-top: -28vh;
+    background-color: var(--cor01);
+    color: var(--cor05);
+    
+}
+.escolha{
+    display: block;
+    margin-top: -35vh;
+    background-color: white;
+}
+.escolha a{
+    display: block;
+    padding: 5vw;
+    width: 105vw;
+    height: 50vh;
+    border-radius: 25px;
+    background-color: var(--cor01);
+    margin-left: -9.5vw;
+    margin-bottom: 5vh;
+    text-decoration: none;
+    color: var(--cor05);
+    font-family: var(--fontNormal);
+}
+.escolha a:hover{
+    background-color: var(--cor01);
+    transform: translateX(1vw);
+}
+.escolhaCenter{
+    display: block;
+    margin-top: -35vh;
+    background-color: white;
+}
+.escolhaCenter a{
+    display: block;
+    padding: 5vw;
+    width: 105vw;
+    height: 50vh;
+    border-radius: 25px;
+    background-color: var(--cor01);
+    margin-left: -9.5vw;
+    margin-bottom: 5vh;
+    text-decoration: none;
+    color: var(--cor05);
+    font-family: var(--fontNormal);
+}
+.escolhaCenter a:hover{
+    background-color: var(--cor01);
+    transform: translateX(1vw);
+}
+#imgIcon{
+    width: 75vw;
+    height: 50vh;
+    margin-top: -5vw;
+    margin-left: 10vw;
+}
+.acountconditionals{
+    display: block;
+    padding: 5px;
+    margin-top: 15vw;
+    margin-bottom: -10vw;
+    text-align: left;
+}
+.cll{
+    display: none;
+}
+/*Rivaldo Jesus, Aberta Demais de Oliveira, Mega Bombadora, GrandePorcoVirovisch
