@@ -6,7 +6,6 @@
     <link rel="shortcut icon" href="images/engrenagem.png" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css" media="all">
     <link rel="stylesheet" href="style/portrait.css" media="screen and (orientation: portrait)">
-   
     <title>Conta Criada</title>
     <script src="scripts/script.js"></script>
 </head>
@@ -14,28 +13,84 @@
     <header>
         <img src="images/Settings.png" alt="">
         <nav>
-        <a href="projects.php" class="nav">Home</a>
+            <a href="projects.php" class="nav">Home</a>
             <a href="" class="nav">Pagamento</a>
             <a href="gears.php" class="nav" id="conosco">Gears</a>
         </nav>
+        <a href="bur.html" id="burguinho"><img src="images/cardapio.png" alt=""></a>
     </header>
     <main>
         <section class="trans">
             <div>
                 <h2>Enquanto espera</h2>
                 <h1 class="title">Quer jogar um jogo?</h1>
-                <p>Se sim, vamos lá. Está vendo a 	&#60div&#62? clique nela e só pare quando ela chegar na cor azul. Se conseguir com uma tentativa você e muito sortudo ja que tem 0,67% de taxa de vitoria de primeira. Tente bater meu recorde pessoal de 22 tentativas boa sorte. Quando ela sumir e o contador parar de subir vc ganhou
-
-                </p>
+                <p>Se sim, vamos lá. Está vendo a &#60div&#62? clique nela e só pare quando ela chegar na cor azul. Se conseguir com uma tentativa você é muito sortudo já que tem 0,67% de taxa de vitória de primeira</p>
                 <p id="life"></p>
             </div>
-            <div id="player">
-
+            <div id="player"></div>
+        </section>
+        <section class="trans">
+            <div>
+                <h2>Enquanto espera</h2>
+                <h1 class="title">Mais um jogo</h1>
+                <p>Nesse jogo acerte as perguntas, das 5. Mas você só tem 1 vida. Será que consegue? Não se pode ter erros gramaticais</p>
+                <p id="quest"></p>
+                <form id="questionForm">
+                    <input type="text" placeholder="Resposta" id="Res">
+                </form>
+                <p id="result"></p>
             </div>
         </section>
     </main>
     <script>
         let player = document.getElementById('player');
+        let quest = document.getElementById('quest');
+        let answerElement = document.getElementById('Res');
+        
+        const questions = [
+            'Qual é o planeta mais próximo do Sol?',
+            'Qual é o maior país do mundo em área?',
+            'Qual é o elemento químico mais leve?',
+            'Qual é o maior rio do mundo em comprimento?',
+            'Qual é o maior animal terrestre?'
+        ];
+        const answers = [
+            'Mercúrio',
+            'Rússia',
+            'Hidrogênio',
+            'Rio Amazonas',
+            'Elefante'
+        ];
+        let currentQuestion = 0;
+        const questionElement = document.getElementById('quest');
+        const resultElement = document.getElementById('result');
+        const form = document.getElementById('questionForm');
+        let correta = 0;
+        function showQuestion() {
+            questionElement.textContent = questions[currentQuestion];
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const userAnswer = answerElement.value.trim();
+            if (userAnswer.toLowerCase() === answers[currentQuestion].toLowerCase()) {
+                correta += 1
+                resultElement.textContent = 'Correto! Você acertou : ' + correta;
+            } else {
+                resultElement.textContent = 'Errado! A resposta correta é: ' + answers[currentQuestion];
+                answerElement.style.display = 'none';
+            }
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+                answerElement.value = '';
+            } else {
+                resultElement.textContent += ' Você completou o questionário. VocÊ e um gênio';
+                form.style.display = 'none';
+            }
+        });
+
+        showQuestion();
         let lifes = document.getElementById('life');
         let vidas = 0;
         let color = [
@@ -66,20 +121,29 @@
             'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'oldlace', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'palegreen',
             'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'powderblue', 'rosybrown', 'royalblue', 'saddlebrown',
             'sandybrown', 'seagreen', 'seashell', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue', 'thistle',
-            'tomato', 'yellowgreen'
+            'tomato', 'yellowgreen', 'darkred', 'darkblue', 'darkgreen', 'darkcyan', 'darkmagenta', 'darkviolet', 'darkorange', 'darkorchid',
+            'darkgoldenrod', 'darkkhaki', 'darkolivegreen', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkturquoise', 'darkviolet',
+            'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite',
+            'goldenrod', 'greenyellow', 'honeydew', 'hotpink', 'indianred', 'ivory', 'khaki', 'lavenderblush', 'lawngreen', 'lemonchiffon',
+            'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen',
+            'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow', 'limegreen', 'linen', 'mediumaquamarine', 'mediumblue', 'mediumorchid',
+            'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream',
+            'mistyrose', 'moccasin', 'navajowhite', 'oldlace', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise',
+            'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'powderblue', 'rosybrown', 'royalblue', 'saddlebrown', 'sandybrown', 'seagreen',
+            'seashell', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue', 'thistle', 'tomato', 'yellowgreen'
         ];
         player.addEventListener('click', () => {
-                let randomColor = color[Math.floor(Math.random() * color.length)];
-                player.style.backgroundColor = randomColor;
-                vidas = vidas;
-                if (randomColor == 'blue') {
-                    player.innerHTML = '<p>Você ganhou!</p>';
-                    player.style.display = 'none';
-                } else {
-                    console.log('Você perdeu, tente novamente.\n a cor e ' + randomColor);
-                    vidas++;
-                    lifes.innerHTML = 'Tentativas : ' + vidas;
-                }
+            let randomColor = color[Math.floor(Math.random() * color.length)];
+            player.style.backgroundColor = randomColor;
+            vidas = vidas;
+            if (randomColor == 'blue') {
+                player.innerHTML = '<p>Você ganhou!</p>';
+                player.style.display = 'none';
+            } else {
+                console.log('Você perdeu, tente novamente.\n a cor é ' + randomColor);
+                vidas++;
+                lifes.innerHTML = 'Tentativas : ' + vidas;
+            }
         });
     </script>
 </body>
