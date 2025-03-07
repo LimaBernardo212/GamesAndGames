@@ -33,7 +33,7 @@
             <div>
                 <h2>Enquanto espera</h2>
                 <h1 class="title">Mais um jogo</h1>
-                <p>Nesse jogo acerte as perguntas, das 5. Mas você só tem 1 vida. Será que consegue? Não se pode ter erros gramaticais</p>
+                <p>Nesse jogo acerte as perguntas, das 25. Mas você só tem 1 vida. Será que consegue? Não se pode ter erros gramaticais</p>
                 <p id="quest"></p>
                 <form id="questionForm">
                     <input type="text" placeholder="Resposta" id="Res">
@@ -41,25 +41,152 @@
                 <p id="result"></p>
             </div>
         </section>
+        <section class="trans">
+            <div>
+                <h2>Vamos Jogar Cidade Dorme</h2>
+                <h1 class="title"> Cidade Dorme</h1>
+                <p>VocÊ deverá tentar adivinhar o assasino antes que você seja morto.Quando você morrer o seu prompt desaparecerá.</p>
+                <p>Jogadores : <strong id="j">Joe</strong> | <strong id="e">Elly</strong> | <strong id="z">Zé</strong> | <strong id="s">Sandro</strong> | <strong id="a"></strong>Alberto<strong> | </strong id='l'>Linda<strong> | </strong id='k'>Dra.Karla<strong> | </strong> | <strong id="v">VocÊ</strong></p>
+                <form id="resposta">
+                    <input type="text" placeholder="Resposta" id="respostadojogo">
+                </form>
+            </div>
+        </section>
     </main>
     <script>
+        let joe = document.getElementById('j');
+        let elly = document.getElementById('e');
+        let ze = document.getElementById('z');
+        let sandro = document.getElementById('s');
+        let alberto = document.getElementById('a');
+        let linda = document.getElementById('l');
+        let karla = document.getElementById('k');
+        let voce = document.getElementById('v');
+        let resp = document.getElementById('respostadojogo');
+        let respostare = document.getElementById('resposta');
+        let cidade = ['Joe', 'Elly', 'Zé', 'Sandro', 'Alberto', 'Linda', 'Dra.Karla', 'Você'];
+        let troca = cidade[Math.floor(Math.random() * cidade.length)];
+        const assasino = troca;
+        console.log(assasino);
+        let mortos = 0;
+        respostare.addEventListener('submit', function(event){
+            event.preventDefault();
+        if (resp.value != assasino){
+            console.log(resp.value);
+            let morto = cidade[Math.floor(Math.random() * cidade.length)];
+            console.log(morto + "(MORTO)");
+            if (mortos == 7){
+                window.alert('ASSASINO GANHOU');
+            }
+            if (morto == assasino){
+                morto = cidade[Math.floor(Math.random() * cidade.length)];
+            }else{
+                if (morto == 'Você'){
+                    voce.innerHTML = 'Você (Morto)';
+                    respostare.style.display = 'none';
+                    window.alert('VOCÊ PERDEU O ASSASINO ERA ' + assasino);
+                }
+                if (morto == 'Joe'){
+                    joe.innerHTML = 'Joe (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Elly'){
+                    elly.innerHTML = 'Elly (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Zé'){
+                    ze.innerHTML = 'Zé (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Sandro'){
+                    sandro.innerHTML = 'Sandro (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Alberto'){
+                    alberto.innerHTML = 'Alberto (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Linda'){
+                    linda.innerHTML = 'Linda (Morto)';
+                    mortos += 1;
+                }
+                if (morto == 'Dra.Karla'){
+                    karla.innerHTML = 'Dra.Karla (Morto)';
+                    mortos += 1;
+                }
+            }
+        }else{
+            window.alert('VOCÊ GANHOU O ASSASINO ERA ' + assasino);
+        }
+        });
+        
         let player = document.getElementById('player');
         let quest = document.getElementById('quest');
         let answerElement = document.getElementById('Res');
         
         const questions = [
+            // Very Easy
             'Qual é o planeta mais próximo do Sol?',
             'Qual é o maior país do mundo em área?',
             'Qual é o elemento químico mais leve?',
             'Qual é o maior rio do mundo em comprimento?',
-            'Qual é o maior animal terrestre?'
+            'Qual é o maior animal terrestre?',
+            // Easy
+            'Qual é a capital da França?',
+            'Qual é o maior oceano do mundo?',
+            'Qual é a fórmula química da água?',
+            'Qual é o maior deserto do mundo?',
+            'Qual é o menor país do mundo?',
+            // Medium
+            'Qual é a velocidade da luz?',
+            'Quem pintou a Mona Lisa?',
+            'Qual é o maior planeta do sistema solar?',
+            'Qual é a língua mais falada no mundo?',
+            'Qual é a montanha mais alta do mundo?',
+            // Hard
+            'Qual é a distância da Terra ao Sol?',
+            'Quem escreveu "Dom Quixote"?',
+            'Qual é a capital da Austrália?',
+            'Qual é o elemento químico com símbolo Au?',
+            'Qual é o maior lago do mundo?',
+            // Hardcore
+            'Qual é a fórmula da Teoria da Relatividade de Einstein?',
+            'Quem descobriu a penicilina?',
+            'Qual é a capital da Mongólia?',
+            'Qual é o maior vulcão ativo do mundo?',
+            'Qual é o nome da galáxia em que vivemos?'
         ];
         const answers = [
+            // Very Easy
             'Mercúrio',
             'Rússia',
             'Hidrogênio',
             'Rio Amazonas',
-            'Elefante'
+            'Elefante',
+            // Easy
+            'Paris',
+            'Oceano Pacífico',
+            'H2O',
+            'Deserto do Saara',
+            'Vaticano',
+            // Medium
+            '299792458 m/s',
+            'Leonardo da Vinci',
+            'Júpiter',
+            'Mandarim',
+            'Monte Everest',
+            // Hard
+            '149.6 milhões de km',
+            'Miguel de Cervantes',
+            'Camberra',
+            'Ouro',
+            'Lago Cáspio',
+            // Hardcore
+            'E=mc²',
+            'Alexander Fleming',
+            'Ulaanbaatar',
+            'Mauna Loa',
+            'Via Láctea'
         ];
         let currentQuestion = 0;
         const questionElement = document.getElementById('quest');
@@ -85,7 +212,7 @@
                 showQuestion();
                 answerElement.value = '';
             } else {
-                resultElement.textContent += ' Você completou o questionário. VocÊ e um gênio';
+                resultElement.textContent += ' Você completou o questionário!';
                 form.style.display = 'none';
             }
         });
@@ -123,16 +250,8 @@
             'sandybrown', 'seagreen', 'seashell', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue', 'thistle',
             'tomato', 'yellowgreen', 'darkred', 'darkblue', 'darkgreen', 'darkcyan', 'darkmagenta', 'darkviolet', 'darkorange', 'darkorchid',
             'darkgoldenrod', 'darkkhaki', 'darkolivegreen', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkturquoise', 'darkviolet',
-            'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite',
-            'goldenrod', 'greenyellow', 'honeydew', 'hotpink', 'indianred', 'ivory', 'khaki', 'lavenderblush', 'lawngreen', 'lemonchiffon',
-            'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgray', 'lightgreen', 'lightpink', 'lightsalmon', 'lightseagreen',
-            'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow', 'limegreen', 'linen', 'mediumaquamarine', 'mediumblue', 'mediumorchid',
-            'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream',
-            'mistyrose', 'moccasin', 'navajowhite', 'oldlace', 'olivedrab', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise',
-            'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'powderblue', 'rosybrown', 'royalblue', 'saddlebrown', 'sandybrown', 'seagreen',
-            'seashell', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue', 'thistle', 'tomato', 'yellowgreen'
-        ];
-        player.addEventListener('click', () => {
+            'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'fire'];
+            player.addEventListener('click', () => {
             let randomColor = color[Math.floor(Math.random() * color.length)];
             player.style.backgroundColor = randomColor;
             vidas = vidas;
