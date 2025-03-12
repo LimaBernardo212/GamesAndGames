@@ -24,7 +24,7 @@
             <div>
                 <h2>Enquanto espera</h2>
                 <h1 class="title">Quer jogar um jogo?</h1>
-                <p>Se sim, vamos lá. Está vendo a &#60div&#62? clique nela e só pare quando ela chegar na cor azul. Se conseguir com uma tentativa você é muito sortudo já que tem 0,67% de taxa de vitória de primeira</p>
+                <p>Se sim, vamos lá. Está vendo a &#60div&#62? clique nela e só pare quando ela desaparecer e o placar parar de subir quando vocÊ clica. Se conseguir com uma tentativa você é muito sortudo já que tem 0,67% de taxa de vitória de primeira</p>
                 <p id="life"></p>
             </div>
             <div id="player"></div>
@@ -63,8 +63,37 @@
                 </form>
             </div>
         </section>
+        <section class="trans">
+            <div>
+                <h2>Enquanto espera</h2>
+                <h1 class="title">Pedra, Papel, Tesoura</h1>
+                <p>Escolha entre pedra, papel ou tesoura. Se você ganhar, você ganha. Se você perder, você perde. Se empatar, você empata. Boa sorte!</p>
+                <p id="robo"></p>
+                <form id="ppt">
+                    <input type="text" placeholder="Pedra, Papel, Tesoura" id="escolha">
+                </form>
+            </div>
+        </section>
     </main>
     <script>
+        let placar = 0;
+        let ppt = document.getElementById('ppt');
+        let escolha = document.getElementById('escolha');
+        let robo = document.getElementById('robo');
+        let escolhas = ['pedra', 'papel', 'tesoura'];
+        let escolhaRobo = escolhas[Math.floor(Math.random() * escolhas.length)];
+        ppt.addEventListener('submit', function(event) {
+            event.preventDefault();
+            let escolhaUsuario = escolha.value.toLowerCase();
+            if (escolhaUsuario == 'pedra' && escolhaRobo == 'tesoura' || escolhaUsuario == 'papel' && escolhaRobo == 'pedra' || escolhaUsuario == 'tesoura' && escolhaRobo == 'papel') {
+                robo.innerHTML = 'Você ganhou! Era ' + escolhaRobo;
+                placar += 1;
+            } else if (escolhaUsuario == 'pedra' && escolhaRobo == 'papel' || escolhaUsuario == 'papel' && escolhaRobo == 'tesoura' || escolhaUsuario == 'tesoura' && escolhaRobo == 'pedra') {
+                robo.innerHTML = 'Você perdeu!';
+            } else {
+                robo.innerHTML = 'Empate!';
+            }
+        });
         let verdades = document.getElementById('Vdd');
         let respVdd = document.getElementById('verdades');
         let formVdd = document.getElementById('form');
@@ -82,6 +111,7 @@
                 } else {
                     verdades.innerHTML = 'Você completou o jogo!';
                     respVdd.style.display = 'none';
+                    placar += 1;
                 }
             } else {
                 verdades.innerHTML = 'Errado! A resposta correta é: ' + respFatos;
@@ -152,6 +182,7 @@
                 }
             } else {
                 window.alert('VOCÊ GANHOU O ASSASSINO ERA ' + assasino);
+                placar += 1;
             }
         });
 
@@ -248,6 +279,7 @@
                 answerElement.value = '';
             } else {
                 resultElement.textContent += ' Você completou o questionário!';
+                placar += 1;
                 form.style.display = 'none';
             }
         });
@@ -292,6 +324,7 @@
             vidas = vidas;
             if (randomColor == 'blue') {
                 player.innerHTML = '<p>Você ganhou!</p>';
+                placar += 1;
                 player.style.display = 'none';
             } else {
                 console.log('Você perdeu, tente novamente.\n a cor é ' + randomColor);
